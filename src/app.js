@@ -1,6 +1,7 @@
 const express = require('express');
 const {join} = require('path');
-const {env} = require('process');
+// const {env} = require('process');
+const port = 4000;
 
 const app = express();
 const routes = require('./routes/books.routes.js');
@@ -24,6 +25,6 @@ app.use(routes);
 // set static files source
 app.use('/public', express.static(join(__dirname, '/public')));
 
-app.listen(env.PORT, () => {
-    console.log(`SERVER LISTENING ON PORT ${env.PORT}`);
+app.listen(port, () => {
+    console.log(`SERVER LISTENING ON PORT ${port}`);
 });
